@@ -16,4 +16,4 @@ jobs:
 
 
     steps:
-    - run: npm test
+    - run: npx cypress run
