@@ -3,18 +3,16 @@
 
 name: test-auto-trigger-push-events
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+on: [push]
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-
+  cypress-run:
+    run-on: unbuntu-latest
     steps:
-    - run: npm install cypress
-    - run: npx cypress run
+      - name: checkout
+        use: actions/checkout@v2
+        
+      -name: Cypress run
+        use: cypress-io/github-action@v4
+        with:
+          build: npm run build
+          start: npm start
