@@ -1,6 +1,6 @@
 name: Auto Update Branch
 
-on: [push]
+on: [push, pull_request]
 jobs:
   update-branches:
     runs-on: ubuntu-latest
