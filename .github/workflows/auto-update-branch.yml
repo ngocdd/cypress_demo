@@ -1,12 +1,2 @@
-name: Auto Update Branch
-
-on: [push]
-
-jobs:
-  auto-update:
-    name: Auto Update Branch
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: docker://chinthakagodawita/autoupdate-action:v1
-        env:
-          GITHUB_TOKEN: '${{ secrets.BUILD_GITHUB_TOKEN }}'
+- name: Auto Update
+  uses: chinthakagodawita/autoupdate@v1.6.0
