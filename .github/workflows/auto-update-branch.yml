@@ -12,4 +12,4 @@ jobs:
         id: autoUpdateBranch
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          requiredApprovals: 1 #Number of required approvals before branch should be updated
+          requiredApprovals: 0 #Number of required approvals before branch should be updated
