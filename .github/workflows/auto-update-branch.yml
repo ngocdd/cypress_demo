@@ -1,15 +1,17 @@
-name: Auto Update Branch
-
-on: [push, pull_request]
+name: autoupdate
+on:
+  # This will trigger on all pushes to all branches.
+  push: {}
+  # Alternatively, you can only trigger if commits are pushed to certain branches, e.g.:
+  # push:
+  #   branches:
+  #     - master
+  #     - unstable
 jobs:
-  update-branches:
-    runs-on: ubuntu-latest
+  autoupdate:
+    name: autoupdate
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Update branches
-        uses: brainly/action-autoupdate-branch@2.0.0
-        id: autoUpdateBranch
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          requiredApprovals: 0 #Number of required approvals before branch should be updated
+      - uses: docker://chinthakagodawita/autoupdate-action:v1
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
