@@ -145,5 +145,7 @@ describe('example to-do app', () => {
   // test master change 3
   // test master change 4
   // test master change 5
+ // test checkout change 3
+
   
 })
