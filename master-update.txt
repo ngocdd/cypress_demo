@@ -12,3 +12,8 @@ master update 11
 master update 12
 master update 13
 master update 14
+vingroup.net
+vinai
+vinbig data
+admin account:  admin
+password: admin123
